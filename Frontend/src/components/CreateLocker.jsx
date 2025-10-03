@@ -20,7 +20,7 @@ const CreateLocker = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/locker/create", data);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/locker/create`, data);
 
       if (response.data.success) {
         navigate("/userdashboard", { 

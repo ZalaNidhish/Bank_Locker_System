@@ -18,7 +18,7 @@ const Logout = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/logout", data);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/logout`, data);
 
       if (response.data.success) {
         navigate("/login", {state:{isLoggedin: response.data.isLoggedin}});

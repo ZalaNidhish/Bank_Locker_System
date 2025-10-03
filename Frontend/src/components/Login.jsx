@@ -20,7 +20,7 @@ const Login = () => {
 
 
     try {
-      const response = await axios.post("http://localhost:5000/login", data);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, data);
       // Optionally, redirect or show success message here
       if(response.data.success){
         if(response.data.isLoggedin && response.data.isAdmin){
